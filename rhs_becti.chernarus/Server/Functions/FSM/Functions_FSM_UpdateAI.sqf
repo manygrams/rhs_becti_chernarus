@@ -318,7 +318,7 @@ CTI_FSM_UpdateAI_Order_TakeTowns = {
 	_reload = _this select 3;
 
 	//--- Check if the target is given or assigned
-	_assigned_target = [leader _group, _side] call CTI_CO_FNC_GetClosestEnemyTown;
+	_assigned_target = [leader _group, _side] call CTI_CO_FNC_GetNearbyEnemyTown;
 	if !(isNull _assigned_target) then { //--- Assign a target to the AI if found and swap the order to the town one.
 		switch (_order) do {
 			case CTI_ORDER_TAKETOWNS: {_group setVariable ["cti_order", CTI_ORDER_TAKETOWN_AUTO, true]};
